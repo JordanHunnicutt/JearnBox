@@ -3,12 +3,14 @@ import React, { Fragment } from 'react'
 import {Form, FormGroup, Input, Label} from 'reactstrap'
 import {Redirect} from 'react-router-dom'
 import './JoinGamePage.css'
+import { InGamePage } from '../InGamePage/InGamePage';
 
 export const JoinGamePage:React.FC<any> = (props:any) => {
 
     const [errMess, setErrMess] = React.useState("");
     const [gameJoined, setGameJoined] = React.useState(false);
-
+    const [result, setResult] = React.useState("");
+    const [uName, setUName] = React.useState("");
 
     const enterRoom = (event:any) => {
         event?.preventDefault();
@@ -27,16 +29,15 @@ export const JoinGamePage:React.FC<any> = (props:any) => {
             setErrMess("");
         }
 
-        let result;
-
         try{
-            result = "someIP";
+            setResult("someIP");
             //const result = await Axios.get("url/{roomCode}");
         } catch(error){
             setErrMess("Something went wrong trying to connect to the server");
             return;
         }
 
+        setUName(userName);
         setGameJoined(true);
 
     }
@@ -44,7 +45,8 @@ export const JoinGamePage:React.FC<any> = (props:any) => {
 
     return (
         <>
-            {gameJoined ? /*<Redirect to="/gamePage" />*/ console.log('game joined')
+            {gameJoined ?
+            <InGamePage address={result} uName={uName} gameJoined={setGameJoined}/>
             :
             <>
             <h1>JearnBox</h1>

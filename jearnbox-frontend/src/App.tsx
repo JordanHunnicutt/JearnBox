@@ -1,7 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { JoinGamePage } from './JoinGamePage/JoinGamePage';
+import { JoinGamePage } from './components/JoinGamePage/JoinGamePage';
+import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
+import { InGamePage } from './components/InGamePage/InGamePage';
 
 function App() {
   return (
@@ -21,7 +23,11 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <JoinGamePage />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={JoinGamePage}/>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
