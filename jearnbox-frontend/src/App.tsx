@@ -4,6 +4,8 @@ import './App.css';
 import { JoinGamePage } from './components/JoinGamePage/JoinGamePage';
 import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
 import { InGamePage } from './components/InGamePage/InGamePage';
+import { store } from './Store';
+import { Provider } from 'react-redux';
 
 function App() {
   return (
@@ -23,11 +25,14 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
       <Switch>
         <Route exact path="/" component={JoinGamePage}/>
       </Switch>
     </BrowserRouter>
+    </Provider>
+    
   );
 }
 

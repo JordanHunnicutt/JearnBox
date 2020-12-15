@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form, FormGroup, Input, Label } from 'reactstrap';
+import './InGamePage.css'
 
 interface IGInfo {
     address: string,
@@ -56,8 +57,8 @@ export const InGamePage: React.FC<any> = (props: IGInfo) => {
                 <FormGroup>
                     <Input type="text" name="answer" id="answer" placeholder="Type your answer here" />
                 </FormGroup>
-                <Input type="submit" name="submit" id="submit" value="Submit Answer" onClick={submitAnswer} />
-                <Input type="submit" onClick={gameExit} value="Quit"/>
+                <Input className="Button" type="submit" name="submit" id="submit" value="Submit Answer" onClick={submitAnswer} />
+                <Input className="Button" type="submit" onClick={gameExit} value="Quit"/>
 
             </Form>
         </>
