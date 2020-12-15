@@ -18,7 +18,6 @@ export const JoinGamePage: React.FC<any> = (props: any) => {
 
     const enterRoom = (event: any) => {
         event?.preventDefault();
-        console.log("Button clicked")
         const form = event.currentTarget.parentElement;
         const userName = form.firstChild.childNodes[2].value;
         const roomCode = form.childNodes[1].childNodes[2].value;
@@ -82,39 +81,4 @@ export const JoinGamePage: React.FC<any> = (props: any) => {
         </>
     )
 
-}
-
-export const enterFunction = (event: any, eMess: any, gJoin: any, res: any, name: any) => {
-    // event?.preventDefault();
-    // console.log("Button clicked");
-    // const form = event.currentTarget.parentElement;
-    // const userName = form.firstChild.childNodes[2].value;
-    // const roomCode = form.childNodes[1].childNodes[2].value;
-
-    // const dispatch = useDispatch();
-
-    // if(userName == ""){
-    //     eMess("Please input a valid username");
-    //     dispatch(setJoinVals([{errMess:eMess,gameJoined:gJoin,result:res,uName:name}]));
-    //     return;
-    // } else if(roomCode.length < 6){
-    //     eMess("Please input a valid room code");
-    //     dispatch(setJoinVals([{errMess:eMess,gameJoined:gJoin,result:res,uName:name}]));
-    //     return;
-    // } else{
-    //     eMess("");
-    // }
-
-    // try{
-    //     res("someIP");
-    //     //const result = await Axios.get("url/{roomCode}");
-    // } catch(error){
-    //     eMess("Something went wrong trying to connect to the server");
-    //     dispatch(setJoinVals([{errMess:eMess,gameJoined:gJoin,result:res,uName:name}]));
-    //     return;
-    // }
-
-    // name(userName);
-    // gJoin(true);
-    // dispatch(setJoinVals([{errMess:eMess,gameJoined:gJoin,result:res,uName:name}]));
 }
