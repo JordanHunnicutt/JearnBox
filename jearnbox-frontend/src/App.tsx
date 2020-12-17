@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
 import { InGamePage } from './components/InGamePage/InGamePage';
 import { store } from './Store';
 import { Provider } from 'react-redux';
+import { WebSocketConnection } from './components/WebSockets/WebSocketConnection';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <BrowserRouter>
       <Switch>
         <Route exact path="/" component={JoinGamePage}/>
+        <Route path="/Web" component={WebSocketConnection}/>
       </Switch>
     </BrowserRouter>
     </Provider>
