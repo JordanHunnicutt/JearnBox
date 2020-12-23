@@ -87,7 +87,7 @@ export const WebsocketJoinComponent = (props) => {
           console.log("disconnected");
         }}
         onMessage={(msg) => {
-          setText(msg);
+          //setText(msg);
           console.log(msg);
         }}
         ref={(client) => {

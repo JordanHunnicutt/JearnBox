@@ -2,6 +2,7 @@ import Axios from 'axios';
 import React from 'react'
 import { Form, FormGroup, Input, Label } from 'reactstrap';
 import './InGamePage.css'
+import { QuestionComponent } from './QuestionAnswerWebSockets/QuestionComponent';
 
 interface IGInfo {
     address: string,
@@ -101,6 +102,8 @@ export const InGamePage: React.FC<any> = (props: IGInfo) => {
                 <Input className="Button" type="submit" onClick={gameExit} value="Quit"/>
 
             </Form>
+
+            <QuestionComponent/>
         </>
     )
 }

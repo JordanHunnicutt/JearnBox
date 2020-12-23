@@ -4,7 +4,6 @@ import './JoinGamePage.css'
 import { InGamePage } from '../InGamePage/InGamePage';
 import { useDispatch } from 'react-redux';
 import { setJoinVals } from '../../_actions/JoinGameActions';
-import { MakeWebSocket } from '../MakeWebSocket/MakeWebSocket';
 import { WebsocketJoinComponent } from './WebsocketJoinComponent/WebsocketJoinComponent';
 
 export const JoinGamePage: React.FC<any> = (props: any) => {
